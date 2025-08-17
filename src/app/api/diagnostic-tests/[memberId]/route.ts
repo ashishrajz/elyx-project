@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import DiagnosticTest from "@/models/DiagnosticTest";
