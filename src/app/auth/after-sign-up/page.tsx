@@ -1,6 +1,6 @@
 "use client";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"; // 👈 tells Next.js: never prerender this page
 
 import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
