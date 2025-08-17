@@ -8,9 +8,8 @@ export async function GET(
 ) {
   await dbConnect();
 
-  const tests = await DiagnosticTest.find({
-    memberId: context.params.memberId,
-  });
+  const { memberId } = context.params; // destructure inside
+  const tests = await DiagnosticTest.find({ memberId });
 
   return NextResponse.json(tests);
 }
