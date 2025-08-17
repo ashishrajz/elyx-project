@@ -2,12 +2,10 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import KeyDecision from "@/models/KeyDecision";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { userId: string } }
-) {
+export async function GET(_req: Request, context: any) {
+  const { userId } = context.params;
+
   await dbConnect();
-  const { userId } = params;
 
   try {
     const decisions = await KeyDecision.find({ userClerkId: userId }).sort({ date: 1 });
