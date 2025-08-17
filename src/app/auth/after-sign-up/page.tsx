@@ -1,14 +1,11 @@
 "use client";
 
-
-
-
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { axiosInstance } from "@/lib/axios";
 
-export default function AfterSignUpPage() {
+function AfterSignUpInner() {
   const { user, isLoaded } = useUser();
   const sp = useSearchParams();
   const type = sp.get("type") === "team" ? "team" : "member";
@@ -37,4 +34,12 @@ export default function AfterSignUpPage() {
   }, [isLoaded, user, type, router]);
 
   return <div className="p-6">Setting up your account…</div>;
+}
+
+export default function AfterSignUpPage() {
+  return (
+    <Suspense fallback={<div className="p-6">Loading…</div>}>
+      <AfterSignUpInner />
+    </Suspense>
+  );
 }
