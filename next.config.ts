@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // ✅ Ensure auth pages are NOT prerendered/exported
+  output: "standalone", // ⬅️ prevents accidental `next export`
+  experimental: {
+    serverActions: true, // if you’re using server actions
+  },
 };
 
 export default nextConfig;
+
