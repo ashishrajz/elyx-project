@@ -1,0 +1,115 @@
+[
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f2",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-07T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 74,
+        "HRV": 35,
+        "sleepHours": 6.1,
+        "steps": 8120,
+        "caloriesBurned": 2250
+      },
+      "scientistNotes": "Baseline week – slightly elevated resting HR, low HRV due to stress."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f3",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-14T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 72,
+        "HRV": 38,
+        "sleepHours": 6.5,
+        "steps": 8900,
+        "caloriesBurned": 2350
+      },
+      "scientistNotes": "Improved recovery as workouts begin."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f4",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-02-01T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 70,
+        "HRV": 40,
+        "sleepHours": 6.8,
+        "steps": 10200,
+        "caloriesBurned": 2450
+      },
+      "scientistNotes": "Positive adaptation – lower HR, stable HRV."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f5",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-03-01T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 69,
+        "HRV": 42,
+        "sleepHours": 7.0,
+        "steps": 11050,
+        "caloriesBurned": 2500
+      },
+      "scientistNotes": "Recovery improved before Q1 test panel."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f6",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-10T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 70,
+        "HRV": 39,
+        "sleepHours": 6.2,
+        "steps": 7800,
+        "caloriesBurned": 2200
+      },
+      "scientistNotes": "Travel week – recovery and sleep dipped."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f7",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-06-01T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 68,
+        "HRV": 45,
+        "sleepHours": 7.1,
+        "steps": 11200,
+        "caloriesBurned": 2550
+      },
+      "scientistNotes": "Good recovery trend leading into Q2 test."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f8",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-15T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 67,
+        "HRV": 48,
+        "sleepHours": 7.2,
+        "steps": 11800,
+        "caloriesBurned": 2600
+      },
+      "scientistNotes": "Cardio fitness improved, LDL plateau reflected in wearable gains."
+    },
+    {
+      "_id": "67e0e4b9e8a1c96fcb2051f9",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-08-25T07:00:00Z",
+      "device": "Garmin",
+      "metrics": {
+        "restingHR": 66,
+        "HRV": 50,
+        "sleepHours": 7.4,
+        "steps": 12050,
+        "caloriesBurned": 2650
+      },
+      "scientistNotes": "Recovery metrics excellent heading into final panel."
+    }
+  ]
+  

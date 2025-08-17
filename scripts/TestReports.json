@@ -1,0 +1,63 @@
+[
+    {
+      "_id": "67d9ece00887490b5df042a8",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-01T09:00:00Z",
+      "panel": {
+        "LDL": 165,
+        "HDL": 42,
+        "TotalCholesterol": 240,
+        "Triglycerides": 180,
+        "CRP": 2.5,
+        "GlucoseFasting": 96
+      },
+      "summary": "Quarter 0: Baseline shows high LDL, slightly elevated triglycerides. No organ issues.",
+      "doctorNotes": "Start intervention. Focus on diet and moderate exercise."
+    },
+    {
+      "_id": "67d9ece00887490b5df042a9",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-01T09:00:00Z",
+      "panel": {
+        "LDL": 145,
+        "HDL": 45,
+        "TotalCholesterol": 220,
+        "Triglycerides": 160,
+        "CRP": 2.0,
+        "GlucoseFasting": 94
+      },
+      "summary": "Quarter 1: LDL improved but still above target.",
+      "doctorNotes": "Introduce plant sterols and omega-3 supplementation."
+    },
+    {
+      "_id": "67d9ece00887490b5df042aa",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-01T09:00:00Z",
+      "panel": {
+        "LDL": 135,
+        "HDL": 47,
+        "TotalCholesterol": 210,
+        "Triglycerides": 150,
+        "CRP": 1.8,
+        "GlucoseFasting": 92
+      },
+      "summary": "Quarter 2: Continued downward trend in LDL. HDL improving.",
+      "doctorNotes": "Encourage consistency. Increase strength training volume."
+    },
+    {
+      "_id": "67d9ece00887490b5df042ab",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-08-29T09:00:00Z",
+      "panel": {
+        "LDL": 125,
+        "HDL": 50,
+        "TotalCholesterol": 200,
+        "Triglycerides": 140,
+        "CRP": 1.5,
+        "GlucoseFasting": 90
+      },
+      "summary": "Quarter 3: Significant progress. LDL approaching optimal range.",
+      "doctorNotes": "Maintain nutrition and exercise plan. Aim for LDL <100 by year end."
+    }
+  ]
+  

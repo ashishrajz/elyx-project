@@ -1,0 +1,115 @@
+[
+    {
+      "_id": "67f29cce0ab22f739d60a2e5",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-06T09:00:00Z",
+      "planType": "Nutrition",
+      "assignedBy": "Carla (Nutritionist)",
+      "details": {
+        "breakfast": "Oats with chia seeds, almonds, and berries",
+        "lunch": "Grilled chicken, quinoa, steamed broccoli",
+        "dinner": "Salmon with brown rice and salad",
+        "snacks": "Greek yogurt, walnuts",
+        "supplements": []
+      },
+      "goal": "Baseline plan – establish Mediterranean-style eating to reduce LDL."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2e6",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-10T09:00:00Z",
+      "planType": "Exercise",
+      "assignedBy": "Rachel (PT)",
+      "details": {
+        "weeklySchedule": [
+          "3x 30-min cardio (jogging, cycling)",
+          "2x 40-min resistance training (full body)",
+          "1x yoga/recovery"
+        ]
+      },
+      "goal": "Introduce structured movement routine for heart health."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2e7",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-05T09:00:00Z",
+      "planType": "Supplements",
+      "assignedBy": "Dr. Warren",
+      "details": {
+        "daily": ["Omega-3 (1000mg)", "Plant sterols (2g)"]
+      },
+      "goal": "Lower LDL and triglycerides further after Q1 results."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2e8",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-15T09:00:00Z",
+      "planType": "Exercise",
+      "assignedBy": "Advik (Performance Scientist)",
+      "details": {
+        "weeklySchedule": [
+          "2x HIIT cardio (20 min)",
+          "3x resistance training",
+          "Active recovery walks during travel"
+        ]
+      },
+      "goal": "Adjust load based on HRV recovery markers."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2e9",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-03T09:00:00Z",
+      "planType": "Nutrition",
+      "assignedBy": "Carla (Nutritionist)",
+      "details": {
+        "breakfast": "Vegetable omelet + whole grain toast",
+        "lunch": "Grilled fish, brown rice, spinach salad",
+        "dinner": "Lentil soup + mixed greens",
+        "snacks": "Carrot sticks, hummus, psyllium fiber drink",
+        "supplements": ["Omega-3", "Plant sterols"]
+      },
+      "goal": "Push LDL closer to <120. Introduce more soluble fiber."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2ea",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-15T09:00:00Z",
+      "planType": "Exercise",
+      "assignedBy": "Rachel (PT)",
+      "details": {
+        "weeklySchedule": [
+          "3x strength training (split: push/pull/legs)",
+          "2x cardio (cycling or swimming)",
+          "Bodyweight workouts during travel"
+        ]
+      },
+      "goal": "Increase lean mass, support HDL improvement, travel adaptability."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2eb",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-08-10T09:00:00Z",
+      "planType": "Supplements",
+      "assignedBy": "Carla (Nutritionist)",
+      "details": {
+        "daily": ["Omega-3", "Plant sterols", "Psyllium husk (evening)"]
+      },
+      "goal": "Boost final LDL reduction before Q3 test."
+    },
+    {
+      "_id": "67f29cce0ab22f739d60a2ec",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-08-29T09:00:00Z",
+      "planType": "Nutrition",
+      "assignedBy": "Carla (Nutritionist)",
+      "details": {
+        "breakfast": "Overnight oats with flax + berries",
+        "lunch": "Tofu stir fry with quinoa",
+        "dinner": "Grilled salmon with kale salad",
+        "snacks": "Mixed nuts, psyllium fiber drink",
+        "supplements": ["Omega-3", "Plant sterols", "Psyllium husk"]
+      },
+      "goal": "Finalize LDL reduction strategy. Sustainable long-term plan."
+    }
+  ]
+  

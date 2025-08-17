@@ -1,0 +1,66 @@
+[
+    {
+      "_id": "67d749e00177264b9a524e16",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-05T10:00:00Z",
+      "decisionBy": "Dr. Warren",
+      "context": "Baseline test shows high LDL (165).",
+      "decision": "Start Mediterranean-style nutrition plan with reduced fried foods.",
+      "rationale": "Evidence shows Mediterranean diet lowers LDL and improves HDL."
+    },
+    {
+      "_id": "67d749e00177264b9a524e17",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-01-10T12:00:00Z",
+      "decisionBy": "Rachel (PT)",
+      "context": "Ashish new to structured workouts.",
+      "decision": "Begin with 3x/week moderate cardio + 2x/week resistance training.",
+      "rationale": "Build foundation without overtraining."
+    },
+    {
+      "_id": "67d749e00177264b9a524e18",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-05T09:00:00Z",
+      "decisionBy": "Carla (Nutritionist)",
+      "context": "LDL improved but still above 140.",
+      "decision": "Introduce plant sterols and omega-3 supplements.",
+      "rationale": "Plant sterols can reduce LDL by 10–15%; omega-3 improves triglycerides."
+    },
+    {
+      "_id": "67d749e00177264b9a524e19",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-04-15T14:00:00Z",
+      "decisionBy": "Advik (Performance Scientist)",
+      "context": "Wearable data showed low HRV and poor recovery during travel week.",
+      "decision": "Adjust training intensity to recovery-based plan.",
+      "rationale": "Recovery markers should dictate load to avoid overtraining."
+    },
+    {
+      "_id": "67d749e00177264b9a524e1a",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-03T11:00:00Z",
+      "decisionBy": "Dr. Warren",
+      "context": "LDL dropped to 135 but plateauing.",
+      "decision": "Increase strength training and further reduce saturated fats.",
+      "rationale": "Resistance training supports lipid metabolism and HDL improvement."
+    },
+    {
+      "_id": "67d749e00177264b9a524e1b",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-07-15T15:30:00Z",
+      "decisionBy": "Neel (Lead)",
+      "context": "Ashish reported plan fatigue and friction during travel.",
+      "decision": "Simplify exercise plan to travel-friendly bodyweight workouts.",
+      "rationale": "Adherence is more important than complexity during frequent travel."
+    },
+    {
+      "_id": "67d749e00177264b9a524e1c",
+      "userClerkId": "user_31M0IVTknsevzr1BKEcksgc0Ka5",
+      "date": "2025-08-10T09:30:00Z",
+      "decisionBy": "Carla (Nutritionist)",
+      "context": "Ashish’s LDL trending downward but needs further support.",
+      "decision": "Add psyllium husk fiber supplement to evening routine.",
+      "rationale": "Soluble fiber binds cholesterol and aids in lowering LDL."
+    }
+  ]
+  
