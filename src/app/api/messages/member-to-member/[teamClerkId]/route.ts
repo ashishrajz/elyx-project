@@ -3,18 +3,27 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import Message from "@/models/Message";
 
-export async function GET(_: Request, { params }: { params: { teamClerkId: string } }) {
-  const { userId } = await auth();
-  if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+export async function GET(_req: Request, context: any) {
+  try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
-  await dbConnect();
+    await dbConnect();
 
-  const msgs = await Message.find({
-    $or: [
-      { senderClerkId: userId, receiverClerkId: params.teamClerkId },
-      { senderClerkId: params.teamClerkId, receiverClerkId: userId },
-    ],
-  }).sort({ createdAt: 1 });
+    const { teamClerkId } = context.params;
 
-  return NextResponse.json(msgs);
+    const msgs = await Message.find({
+      $or: [
+        { senderClerkId: userId, receiverClerkId: teamClerkId },
+        { senderClerkId: teamClerkId, receiverClerkId: userId },
+      ],
+    }).sort({ createdAt: 1 });
+
+    return NextResponse.json(msgs);
+  } catch (err: any) {
+    console.error("❌ Error in GET /messages/[teamClerkId]:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
 }
