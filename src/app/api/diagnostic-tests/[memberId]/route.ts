@@ -1,17 +1,13 @@
-// @ts-nocheck
-
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import DiagnosticTest from "@/models/DiagnosticTest";
 
 export async function GET(
-  _req: Request,
-  context: { params: Record<string, string> }
+  req: Request,
+  context: { params: { memberId: string } }
 ) {
+  const { memberId } = context.params;
   await dbConnect();
-
-  const memberId = context.params.memberId;
   const tests = await DiagnosticTest.find({ memberId });
-
   return NextResponse.json(tests);
 }
