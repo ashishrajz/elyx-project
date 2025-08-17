@@ -3,13 +3,10 @@ import dbConnect from "@/lib/db";
 import Member from "@/models/Member";
 import TeamMember from "@/models/TeamMember";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+export async function GET(_req: Request, context: any) {
   try {
     await dbConnect();
-    const { id } = params; // Clerk ID
+    const { id } = context.params; // Clerk ID
 
     const teamMember = await TeamMember.findOne({ clerkId: id });
     if (teamMember) {
