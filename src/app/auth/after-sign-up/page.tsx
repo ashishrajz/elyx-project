@@ -1,11 +1,16 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
+
+
 import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { axiosInstance } from "@/lib/axios";
 
-export const dynamic = "force-dynamic"; // ✅ prevents prerender crash
+
 
 export default function AfterSignUpPage() {
   const { user, isLoaded } = useUser();
