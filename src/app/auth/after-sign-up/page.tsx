@@ -1,8 +1,11 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { axiosInstance } from "@/lib/axios";
+
+export const dynamic = "force-dynamic"; // ✅ prevents prerender crash
 
 export default function AfterSignUpPage() {
   const { user, isLoaded } = useUser();
