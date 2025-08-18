@@ -19,14 +19,26 @@ export default function PlanViewer({ userId }: { userId: string }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!userId) return;
+
     setLoading(true);
     axiosInstance
       .get(`/plans/${userId}`)
       .then((res) => {
-        // normalize details to always be an object
-        const data = res.data.map((p: any) => ({
+        const data = (res.data || []).map((p: any) => ({
           ...p,
           details: p.details || {},
+          // normalize arrays
+          details: {
+            ...p.details,
+            supplements: Array.isArray(p.details?.supplements) ? p.details.supplements : [],
+            weeklySchedule: Array.isArray(p.details?.weeklySchedule) ? p.details.weeklySchedule : [],
+            daily: Array.isArray(p.details?.daily) ? p.details.daily : [],
+            breakfast: p.details?.breakfast || "-",
+            lunch: p.details?.lunch || "-",
+            dinner: p.details?.dinner || "-",
+            snacks: p.details?.snacks || "-",
+          },
           goal: p.goal || "-",
           assignedBy: p.assignedBy || "-",
         }));
@@ -54,25 +66,24 @@ export default function PlanViewer({ userId }: { userId: string }) {
             <div className="text-sm space-y-1">
               {plan.planType === "Nutrition" && (
                 <>
-                  <p><b>Breakfast:</b> {plan.details?.breakfast || "-"}</p>
-                  <p><b>Lunch:</b> {plan.details?.lunch || "-"}</p>
-                  <p><b>Dinner:</b> {plan.details?.dinner || "-"}</p>
-                  <p><b>Snacks:</b> {plan.details?.snacks || "-"}</p>
-                  <p>
-                    <b>Supplements:</b> {(plan.details?.supplements || []).join(", ") || "-"}
-                  </p>
+                  <p><b>Breakfast:</b> {plan.details.breakfast}</p>
+                  <p><b>Lunch:</b> {plan.details.lunch}</p>
+                  <p><b>Dinner:</b> {plan.details.dinner}</p>
+                  <p><b>Snacks:</b> {plan.details.snacks}</p>
+                  <p><b>Supplements:</b> {plan.details.supplements.join(", ") || "-"}</p>
                 </>
               )}
               {plan.planType === "Exercise" && (
                 <ul className="list-disc pl-5">
-                  {(plan.details?.weeklySchedule || []).map((ex: string, idx: number) => (
-                    <li key={idx}>{ex}</li>
-                  ))}
-                  {!(plan.details?.weeklySchedule?.length) && <li>No exercises assigned</li>}
+                  {plan.details.weeklySchedule.length
+                    ? plan.details.weeklySchedule.map((ex: string, idx: number) => (
+                        <li key={idx}>{ex}</li>
+                      ))
+                    : <li>No exercises assigned</li>}
                 </ul>
               )}
               {plan.planType === "Supplements" && (
-                <p>{(plan.details?.daily || []).join(", ") || "-"}</p>
+                <p>{plan.details.daily.length ? plan.details.daily.join(", ") : "-"}</p>
               )}
             </div>
           </CardContent>
