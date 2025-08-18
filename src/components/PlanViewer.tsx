@@ -10,7 +10,7 @@ interface Plan {
   date: string;
   planType: "Nutrition" | "Exercise" | "Supplements";
   assignedBy: string;
-  details: {
+  details?: {
     breakfast?: string;
     lunch?: string;
     dinner?: string;
@@ -19,7 +19,7 @@ interface Plan {
     weeklySchedule?: string[];
     daily?: string[];
   };
-  goal: string;
+  goal?: string;
 }
 
 export default function PlanViewer({ userId }: { userId: string }) {
@@ -35,16 +35,14 @@ export default function PlanViewer({ userId }: { userId: string }) {
       .then((res) => {
         const data = (res.data || []).map((p: any) => ({
           ...p,
-          details: {
-            ...p.details,
-            breakfast: p.details?.breakfast || "-",
-            lunch: p.details?.lunch || "-",
-            dinner: p.details?.dinner || "-",
-            snacks: p.details?.snacks || "-",
-            supplements: Array.isArray(p.details?.supplements) ? p.details.supplements : [],
-            weeklySchedule: Array.isArray(p.details?.weeklySchedule) ? p.details.weeklySchedule : [],
-            daily: Array.isArray(p.details?.daily) ? p.details.daily : [],
-          },
+          details: p.details || {},
+          detailsBreakfast: p.details?.breakfast || "-",
+          detailsLunch: p.details?.lunch || "-",
+          detailsDinner: p.details?.dinner || "-",
+          detailsSnacks: p.details?.snacks || "-",
+          detailsSupplements: Array.isArray(p.details?.supplements) ? p.details.supplements : [],
+          detailsWeeklySchedule: Array.isArray(p.details?.weeklySchedule) ? p.details.weeklySchedule : [],
+          detailsDaily: Array.isArray(p.details?.daily) ? p.details.daily : [],
           goal: p.goal || "-",
           assignedBy: p.assignedBy || "-",
         }));
@@ -73,24 +71,24 @@ export default function PlanViewer({ userId }: { userId: string }) {
             <div className="text-sm space-y-1">
               {plan.planType === "Nutrition" && (
                 <>
-                  <p><b>Breakfast:</b> {plan.details.breakfast}</p>
-                  <p><b>Lunch:</b> {plan.details.lunch}</p>
-                  <p><b>Dinner:</b> {plan.details.dinner}</p>
-                  <p><b>Snacks:</b> {plan.details.snacks}</p>
-                  <p><b>Supplements:</b> {plan.details.supplements.join(", ") || "-"}</p>
+                  <p><b>Breakfast:</b> {plan.details?.breakfast || "-"}</p>
+                  <p><b>Lunch:</b> {plan.details?.lunch || "-"}</p>
+                  <p><b>Dinner:</b> {plan.details?.dinner || "-"}</p>
+                  <p><b>Snacks:</b> {plan.details?.snacks || "-"}</p>
+                  <p><b>Supplements:</b> {(plan.details?.supplements ?? []).join(", ") || "-"}</p>
                 </>
               )}
 
               {plan.planType === "Exercise" && (
                 <ul className="list-disc pl-5">
-                  {(plan.details.weeklySchedule.length ? plan.details.weeklySchedule : ["No exercises assigned"]).map((ex, idx) => (
+                  {(plan.details?.weeklySchedule ?? ["No exercises assigned"]).map((ex, idx) => (
                     <li key={idx}>{ex}</li>
                   ))}
                 </ul>
               )}
 
               {plan.planType === "Supplements" && (
-                <p>{plan.details.daily.length ? plan.details.daily.join(", ") : "-"}</p>
+                <p>{(plan.details?.daily ?? []).join(", ") || "-"}</p>
               )}
             </div>
           </CardContent>
