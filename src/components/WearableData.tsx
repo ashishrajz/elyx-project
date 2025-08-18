@@ -9,7 +9,7 @@ interface Wearable {
   userClerkId: string;
   date: string;
   device: string;
-  metrics?: {
+  metrics: {
     restingHR?: number;
     HRV?: number;
     sleepHours?: number;
@@ -24,15 +24,19 @@ export default function WearableData({ userId }: { userId: string }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!userId) return;
+
     setLoading(true);
     axiosInstance
       .get(`/wearables/${userId}`)
       .then((res) => {
-        // normalize metrics to always be an object
-        const data = res.data.map((w: any) => ({
-          ...w,
+        const data = (res.data || []).map((w: any) => ({
+          _id: w._id,
+          userClerkId: w.userClerkId,
+          date: w.date,
+          device: w.device,
           metrics: w.metrics || {},
-          scientistNotes: w.scientistNotes || "",
+          scientistNotes: w.scientistNotes || "No notes",
         }));
         setWearables(data);
       })
@@ -60,9 +64,7 @@ export default function WearableData({ userId }: { userId: string }) {
             <p><b>Sleep:</b> {w.metrics?.sleepHours ?? "-" } hrs</p>
             <p><b>Steps:</b> {w.metrics?.steps ?? "-"}</p>
             <p><b>Calories:</b> {w.metrics?.caloriesBurned ?? "-"}</p>
-            <p className="italic text-muted-foreground">
-              {w.scientistNotes || "No notes"}
-            </p>
+            <p className="italic text-muted-foreground">{w.scientistNotes}</p>
           </CardContent>
         </Card>
       ))}
