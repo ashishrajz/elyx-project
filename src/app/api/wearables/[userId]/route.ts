@@ -1,16 +1,16 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
-import TestReport from "@/models/TestReport";
+import WearableData from "@/models/WearableData";
 
 export async function GET(_req: Request, context: any) {
   try {
     await dbConnect();
-    const { userId } = context.params; // ✅ access params safely
+    const { userId } = context.params; // ✅ correct way
 
-    const reports = await TestReport.find({ userClerkId: userId }).sort({ date: 1 });
-    return NextResponse.json(reports);
+    const wearables = await WearableData.find({ userClerkId: userId }).sort({ date: 1 });
+    return NextResponse.json(wearables);
   } catch (err: any) {
-    console.error("❌ Error in /test-reports/[userId]:", err);
+    console.error("❌ Error in /wearables/[userId]:", err);
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
