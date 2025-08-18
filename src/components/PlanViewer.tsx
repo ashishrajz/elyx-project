@@ -10,8 +10,16 @@ interface Plan {
   date: string;
   planType: "Nutrition" | "Exercise" | "Supplements";
   assignedBy: string;
-  details?: Record<string, any>;
-  goal?: string;
+  details: {
+    breakfast?: string;
+    lunch?: string;
+    dinner?: string;
+    snacks?: string;
+    supplements?: string[];
+    weeklySchedule?: string[];
+    daily?: string[];
+  };
+  goal: string;
 }
 
 export default function PlanViewer({ userId }: { userId: string }) {
@@ -27,17 +35,15 @@ export default function PlanViewer({ userId }: { userId: string }) {
       .then((res) => {
         const data = (res.data || []).map((p: any) => ({
           ...p,
-          details: p.details || {},
-          // normalize arrays
           details: {
             ...p.details,
-            supplements: Array.isArray(p.details?.supplements) ? p.details.supplements : [],
-            weeklySchedule: Array.isArray(p.details?.weeklySchedule) ? p.details.weeklySchedule : [],
-            daily: Array.isArray(p.details?.daily) ? p.details.daily : [],
             breakfast: p.details?.breakfast || "-",
             lunch: p.details?.lunch || "-",
             dinner: p.details?.dinner || "-",
             snacks: p.details?.snacks || "-",
+            supplements: Array.isArray(p.details?.supplements) ? p.details.supplements : [],
+            weeklySchedule: Array.isArray(p.details?.weeklySchedule) ? p.details.weeklySchedule : [],
+            daily: Array.isArray(p.details?.daily) ? p.details.daily : [],
           },
           goal: p.goal || "-",
           assignedBy: p.assignedBy || "-",
@@ -63,6 +69,7 @@ export default function PlanViewer({ userId }: { userId: string }) {
           <CardContent className="space-y-2">
             <p><b>Assigned By:</b> {plan.assignedBy}</p>
             <p><b>Goal:</b> {plan.goal}</p>
+
             <div className="text-sm space-y-1">
               {plan.planType === "Nutrition" && (
                 <>
@@ -73,15 +80,15 @@ export default function PlanViewer({ userId }: { userId: string }) {
                   <p><b>Supplements:</b> {plan.details.supplements.join(", ") || "-"}</p>
                 </>
               )}
+
               {plan.planType === "Exercise" && (
                 <ul className="list-disc pl-5">
-                  {plan.details.weeklySchedule.length
-                    ? plan.details.weeklySchedule.map((ex: string, idx: number) => (
-                        <li key={idx}>{ex}</li>
-                      ))
-                    : <li>No exercises assigned</li>}
+                  {(plan.details.weeklySchedule.length ? plan.details.weeklySchedule : ["No exercises assigned"]).map((ex, idx) => (
+                    <li key={idx}>{ex}</li>
+                  ))}
                 </ul>
               )}
+
               {plan.planType === "Supplements" && (
                 <p>{plan.details.daily.length ? plan.details.daily.join(", ") : "-"}</p>
               )}
